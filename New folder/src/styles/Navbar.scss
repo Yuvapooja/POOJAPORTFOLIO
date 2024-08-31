@@ -1,0 +1,46 @@
+.navbar {
+    background: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        margin: 0 1rem;
+        cursor: pointer;
+        color: white;
+        font-size: 1.2rem;
+        position: relative;
+  
+        &:hover {
+          color: #f5a623;
+        }
+  
+        &:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #f5a623;
+          transition: width 0.3s;
+          position: absolute;
+          bottom: -0.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+  
+        &:hover:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,987 @@
+
+
+:root {
+  --background-image-url: '';
+  --primary-color: #95184acc; /* Violet color */
+  --primary-color-dark: #94076a9b; /* Darker violet color */
+  --secondary-color: #631e8600;
+  --text-color: #fff;
+  --highlight-color: #f5a623;
+  --blink-color-1: #0768608c;
+  --blink-color-2: #9a0e548e;
+  --button-gradient-start: #6f105fcb;
+  --button-gradient-end: #ac1b91e5;
+  --button-shadow-color: rgba(170, 13, 136, 0.726);
+  --project-background: #fff;
+  --project-border: #ddd;
+  --project-title-color: #333;
+  --project-text-color: #666;
+  --button-hover-color: #a23f8f; /* Example color for hover effect */
+}
+
+.home {
+  background: var(--background-image-url) no-repeat center center/cover;
+  color: var(--text-color);
+ .video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--background-image-url) no-repeat center center/cover;
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .welcome {
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in;
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        animation: fadeIn 1.5s ease-in;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid white;
+        animation: fadeIn 2s ease-in;
+      }
+    }
+  }
+
+  .about, .contact {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .skills {
+      margin-top: 40px;
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        animation: fadeIn 2s ease-in;
+      }
+
+      .skills-section {
+        margin: 20px 0;
+
+        h3 {
+          margin-bottom: 10px;
+          font-size: 1.5em;
+          animation: fadeIn 2.5s ease-in;
+        }
+
+        .skills-content {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+        
+          h3 {
+            margin-top: 20px;
+            font-size: 1.5em;
+          }
+          .skills-container {
+            display: flex;
+            flex-direction: row;   // Ensure items are in a row
+            justify-content: center;
+            gap: 1rem;             // Gap between skill boxes
+            margin-top: 2rem;
+            overflow-x: auto;      // Allow horizontal scrolling if items exceed the width
+            white-space: nowrap;   // Prevent wrapping
+          }
+          
+          
+          .skill {
+            background-color: var(--blink-color-1);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            width: 100px;          // Adjust the width to make it smaller
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            display: inline-block; // Ensure each skill is treated as an inline-block element
+            animation: blink 1s infinite alternate;
+            box-shadow: 0 4px 15px var(--button-shadow-color);
+          
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+              background-color: var(--blink-color-2);
+            }
+          }
+          .skill {
+            background-color: #f5a623;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            opacity: 0;
+            transform: scale(0.8) translateY(20px); /* Start below and scaled down */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        
+            &.show {
+              opacity: 1;
+              transform: scale(1) translateY(0); /* Fully visible and normal size */
+            }
+          }
+        }
+      }
+    }
+   
+
+
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+
+        input, textarea {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1em;
+          background-color: var(--blink-color-1);
+          color: #fff;
+          animation: blink 1s infinite alternate;
+          transition: background-color 0.3s ease;
+        
+          &:focus {
+            background-color: var(--blink-color-2);
+            border-color: var(--highlight-color);
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          height: 150px;
+        }
+      }
+
+      button {
+        padding: 12px 25px;
+        background: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
+        color: var(--text-color);
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        box-shadow: 0 4px 15px var(--button-shadow-color);
+        position: relative;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px var(--button-shadow-color);
+          background: linear-gradient(45deg, var(--button-gradient-end), var(--button-gradient-start));
+        }
+
+        &:active {
+          transform: scale(0.95);
+          box-shadow: 0 2px 10px var(--button-shadow-color);
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 10px var(--highlight-color);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          background: rgba(255, 255, 255, 0.3);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+
+        animation: glow 2s infinite alternate;
+      }
+    }
+  
+.contact-details {
+      margin-top: 40px;
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        animation: fadeIn 1s ease-in;
+      }
+
+      p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        animation: fadeIn 1.5s ease-in;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin: 10px 0;
+
+          a {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+              color: var(--highlight-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.projects {
+      padding: 40px;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in;
+      }
+    
+      .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    
+        .project {
+          background: linear-gradient(135deg, var(--project-start-color), var(--project-end-color));
+          border: 1px solid var(--project-border);
+          border-radius: 15px;
+          padding: 20px;
+          width: 300px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease, filter 0.3s ease;
+          text-align: center;
+          overflow: hidden;
+          position: relative;
+          animation: fadeInUp 1s ease-in-out;
+    
+          &:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--project-hover-start-color), var(--project-hover-end-color));
+            border: 1px solid var(--project-hover-border);
+            filter: brightness(1.2);
+    
+            .project-overlay {
+              opacity: 1;
+              transform: translateY(0);
+              animation: overlayGlow 1.5s ease-in-out infinite;
+            }
+          }
+    
+          &:active {
+            transform: scale(0.98);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, var(--project-click-start-color), var(--project-click-end-color));
+            border: 1px solid var(--project-click-border);
+          }
+    
+          &:focus {
+            outline: 3px solid var(--highlight-color);
+            box-shadow: 0 0 10px var(--highlight-color);
+          }
+    
+          .project-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--project-title-color);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            animation: textGlow 1.5s ease-in-out infinite;
+            transition: color 0.3s ease; // Smooth transition for text color change
+          }
+    
+          .project-description {
+            font-size: 1em;
+            color: var(--project-text-color);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease; // Smooth transition for text color change
+          }
+    
+          .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+    
+            a {
+              background: var(--primary-color);
+              color: var(--text-color);
+              padding: 10px 20px;
+              border-radius: 5px;
+              text-decoration: none;
+              transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              animation: pulse 2s infinite;
+    
+              &:hover {
+                background-color: var(--primary-color-dark);
+                transform: scale(1.1);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+              }
+    
+              &:active {
+                transform: scale(0.95);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+    
+          .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 0;
+            border-radius: 15px;
+    
+            h2 {
+              font-size: 2em;
+              margin-bottom: 10px;
+              color: var(--highlight-color);
+            }
+    
+            p {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+      @keyframes overlayGlow {
+        0% {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        50% {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+        100% {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    
+      @keyframes textGlow {
+        0% {
+          text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color);
+        }
+        50% {
+          text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+        }
+        100% {
+          text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color);
+        }
+      }
+    
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    
+    
+  
+
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% { background-color: var(--blink-color-1); }
+  100% { background-color: var(--blink-color-2); }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color), 0 0 40px var(--highlight-color);
+  }
+}
+// :root {
+//   --background-image-url: '';
+//   --primary-color: #95184acc; /* Violet color */
+//   --primary-color-dark: #94076a9b; /* Darker violet color */
+//   --secondary-color: #631e8600;
+//   --text-color: #fff;
+//   --highlight-color: #f5a623;
+//   --blink-color-1: #0768608c;
+//   --blink-color-2: #9a0e548e;
+//   --button-gradient-start: #6f105fcb;
+//   --button-gradient-end: #ac1b91e5;
+//   --button-shadow-color: rgba(170, 13, 136, 0.726);
+//   --project-background: #fff;
+//   --project-border: #ddd;
+//   --project-title-color: #333;
+//   --project-text-color: #666;
+//   --button-hover-color: #a23f8f; /* Example color for hover effect */
+// }
+
+// .home {
+//   background: var(--background-image-url) no-repeat center center/cover;
+//   color: var(--text-color);
+
+//   .video-background {
+//     position: relative;
+//     height: 100vh;
+//     overflow: hidden;
+//     background: var(--background-image-url) no-repeat center center/cover;
+
+//     .background-video {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+
+//     .content {
+//       position: relative;
+//       z-index: 1;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       height: 100%;
+//       color: white;
+//       text-align: center;
+//       padding: 20px;
+//     }
+
+//     .welcome {
+//       h1 {
+//         font-size: 2.5em;
+//         margin-bottom: 20px;
+//         animation: fadeIn 1s ease-in;
+//       }
+
+//       p {
+//         font-size: 1.2em;
+//         margin-bottom: 20px;
+//         animation: fadeIn 1.5s ease-in;
+//       }
+
+//       .profile-image {
+//         width: 150px;
+//         height: 150px;
+//         border-radius: 50%;
+//         border: 2px solid white;
+//         animation: fadeIn 2s ease-in;
+//       }
+//     }
+//   }
+
+//   .about, .contact, .projects {
+//     padding: 20px;
+//     background-color: var(--secondary-color);
+//     color: var(--text-color);
+
+//     h1 {
+//       font-size: 2.5em;
+//       margin-bottom: 20px;
+//       animation: fadeIn 1s ease-in;
+//     }
+
+//     p {
+//       font-size: 1.2em;
+//       margin-bottom: 20px;
+//       animation: fadeIn 1.5s ease-in;
+//     }
+
+//     .skills {
+//       margin-top: 40px;
+
+//       h2 {
+//         font-size: 2em;
+//         margin-bottom: 10px;
+//         animation: fadeIn 2s ease-in;
+//       }
+
+//       .skills-section {
+//         margin: 20px 0;
+
+//         h3 {
+//           margin-bottom: 10px;
+//           font-size: 1.5em;
+//           animation: fadeIn 2.5s ease-in;
+//         }
+
+//         .skills-content {
+//           display: flex;
+//           flex-direction: row;
+//           gap: 15px;
+        
+//           h3 {
+//             margin-top: 20px;
+//             font-size: 1.5em;
+//           }
+
+//           .skills-container {
+//             display: flex;
+//             flex-direction: row;   // Ensure items are in a row
+//             justify-content: center;
+//             gap: 1rem;             // Gap between skill boxes
+//             margin-top: 2rem;
+//             overflow-x: auto;      // Allow horizontal scrolling if items exceed the width
+//             white-space: nowrap;   // Prevent wrapping
+//           }
+          
+//           .skill {
+//             background-color: var(--blink-color-1);
+//             border: 1px solid #ccc;
+//             border-radius: 10px;
+//             padding: 10px 20px;
+//             font-size: 16px;
+//             font-weight: bold;
+//             color: #fff;
+//             text-align: center;
+//             width: 100px;          // Adjust the width to make it smaller
+//             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//             transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+//             display: inline-block; // Ensure each skill is treated as an inline-block element
+//             animation: blink 1s infinite alternate;
+//             box-shadow: 0 4px 15px var(--button-shadow-color);
+          
+//             &:hover {
+//               transform: translateY(-5px);
+//               box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//               background-color: var(--blink-color-2);
+//             }
+//           }
+//           .skill {
+//             background-color: #f5a623;
+//             color: #fff;
+//             padding: 10px 20px;
+//             border-radius: 5px;
+//             font-size: 1.2em;
+//             opacity: 0;
+//             transform: scale(0.8) translateY(20px); /* Start below and scaled down */
+//             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        
+//             &.show {
+//               opacity: 1;
+//               transform: scale(1) translateY(0); /* Fully visible and normal size */
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     form {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 15px;
+
+//       label {
+//         display: flex;
+//         flex-direction: column;
+//         width: 100%;
+//         max-width: 500px;
+
+//         input, textarea {
+//           padding: 12px;
+//           border: 1px solid #ddd;
+//           border-radius: 5px;
+//           font-size: 1em;
+//           background-color: var(--blink-color-1);
+//           color: #fff;
+//           animation: blink 1s infinite alternate;
+//           transition: background-color 0.3s ease;
+        
+//           &:focus {
+//             background-color: var(--blink-color-2);
+//             border-color: var(--highlight-color);
+//           }
+//         }
+
+//         textarea {
+//           resize: vertical;
+//           height: 150px;
+//         }
+//       }
+
+//       button {
+//         padding: 12px 25px;
+//         background: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
+//         color: var(--text-color);
+//         border: none;
+//         border-radius: 5px;
+//         font-size: 1em;
+//         cursor: pointer;
+//         transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+//         box-shadow: 0 4px 15px var(--button-shadow-color);
+//         position: relative;
+
+//         &:hover {
+//           transform: scale(1.05);
+//           box-shadow: 0 6px 20px var(--button-shadow-color);
+//           background: linear-gradient(45deg, var(--button-gradient-end), var(--button-gradient-start));
+//         }
+
+//         &:active {
+//           transform: scale(0.95);
+//           box-shadow: 0 2px 10px var(--button-shadow-color);
+//         }
+
+//         &:focus {
+//           outline: none;
+//           box-shadow: 0 0 10px var(--highlight-color);
+//         }
+
+//         &::before {
+//           content: '';
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           width: 100%;
+//           height: 100%;
+//           border-radius: 5px;
+//           background: rgba(255, 255, 255, 0.3);
+//           opacity: 0;
+//           transition: opacity 0.3s ease;
+//         }
+
+//         &:hover::before {
+//           opacity: 1;
+//         }
+
+//         animation: glow 2s infinite alternate;
+//       }
+//     }
+    
+//     .contact-details {
+//       margin-top: 40px;
+
+//       h2 {
+//         font-size: 2em;
+//         margin-bottom: 10px;
+//         animation: fadeIn 1s ease-in;
+//       }
+
+//       p {
+//         font-size: 1.1em;
+//         margin-bottom: 15px;
+//         animation: fadeIn 1.5s ease-in;
+//       }
+
+//       ul {
+//         list-style-type: none;
+//         padding: 0;
+
+//         li {
+//           margin: 10px 0;
+
+//           a {
+//             font-size: 1.1em;
+//             color: var(--primary-color);
+//             text-decoration: none;
+
+//             &:hover {
+//               text-decoration: underline;
+//               color: var(--highlight-color);
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   .projects {
+//     padding: 40px;
+//     background-color: var(--secondary-color);
+//     color: var(--text-color);
+  
+//     h1 {
+//       font-size: 2.5em;
+//       margin-bottom: 20px;
+//       animation: fadeIn 1s ease-in;
+//     }
+  
+//     .projects-container {
+//       display: flex;
+//       flex-wrap: wrap;
+//       gap: 20px;
+//       justify-content: center;
+  
+//       .project {
+//         background: linear-gradient(135deg, var(--project-start-color), var(--project-end-color));
+//         border: 1px solid var(--project-border);
+//         border-radius: 15px;
+//         padding: 20px;
+//         width: 300px;
+//         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+//         transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease, filter 0.3s ease;
+//         text-align: center;
+//         overflow: hidden;
+//         position: relative;
+//         animation: fadeInUp 1s ease-in-out;
+  
+//         &:hover {
+//           transform: scale(1.05) rotate(2deg);
+//           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+//           background: linear-gradient(135deg, var(--project-hover-start-color), var(--project-hover-end-color));
+//           border: 1px solid var(--project-hover-border);
+//           filter: brightness(1.2);
+  
+//           .project-overlay {
+//             opacity: 1;
+//             transform: translateY(0);
+//             animation: overlayGlow 1.5s ease-in-out infinite;
+//           }
+//         }
+  
+//         &:active {
+//           transform: scale(0.98);
+//           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+//           background: linear-gradient(135deg, var(--project-click-start-color), var(--project-click-end-color));
+//           border: 1px solid var(--project-click-border);
+//         }
+  
+//         &:focus {
+//           outline: 3px solid var(--highlight-color);
+//           box-shadow: 0 0 10px var(--highlight-color);
+//         }
+  
+//         .project-title {
+//           font-size: 1.5em;
+//           margin-bottom: 10px;
+//           color: var(--project-title-color);
+//           font-weight: bold;
+//           position: relative;
+//           z-index: 1;
+//           animation: textGlow 1.5s ease-in-out infinite;
+//           transition: color 0.3s ease; // Smooth transition for text color change
+//         }
+  
+//         .project-description {
+//           font-size: 1em;
+//           color: var(--project-text-color);
+//           margin-bottom: 15px;
+//           position: relative;
+//           z-index: 1;
+//           transition: color 0.3s ease; // Smooth transition for text color change
+//         }
+  
+//         .project-links {
+//           display: flex;
+//           justify-content: center;
+//           gap: 10px;
+  
+//           a {
+//             background: var(--primary-color);
+//             color: var(--text-color);
+//             padding: 10px 20px;
+//             border-radius: 5px;
+//             text-decoration: none;
+//             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+//             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//             animation: pulse 2s infinite;
+  
+//             &:hover {
+//               background-color: var(--primary-color-dark);
+//               transform: scale(1.1);
+//               box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+//             }
+  
+//             &:active {
+//               transform: scale(0.95);
+//               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//             }
+//           }
+//         }
+  
+//         .project-overlay {
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           width: 100%;
+//           height: 100%;
+//           background: rgba(0, 0, 0, 0.5);
+//           color: #fff;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: center;
+//           align-items: center;
+//           opacity: 0;
+//           transform: translateY(-100%);
+//           transition: opacity 0.3s ease, transform 0.3s ease;
+//           z-index: 0;
+//           border-radius: 15px;
+  
+//           h2 {
+//             font-size: 2em;
+//             margin-bottom: 10px;
+//             color: var(--highlight-color);
+//           }
+  
+//           p {
+//             font-size: 1.2em;
+//           }
+//         }
+//       }
+//     }
+  
+//     @keyframes fadeInUp {
+//       from {
+//         opacity: 0;
+//         transform: translateY(20px);
+//       }
+//       to {
+//         opacity: 1;
+//         transform: translateY(0);
+//       }
+//     }
+  
+//     @keyframes overlayGlow {
+//       0% {
+//         background-color: rgba(255, 255, 255, 0.1);
+//       }
+//       50% {
+//         background-color: rgba(255, 255, 255, 0.3);
+//       }
+//       100% {
+//         background-color: rgba(255, 255, 255, 0.1);
+//       }
+//     }
+  
+//     @keyframes textGlow {
+//       0% {
+//         text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color);
+//       }
+//       50% {
+//         text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+//       }
+//       100% {
+//         text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color);
+//       }
+//     }
+  
+//     @keyframes pulse {
+//       0% {
+//         transform: scale(1);
+//       }
+//       50% {
+//         transform: scale(1.1);
+//       }
+//       100% {
+//         transform: scale(1);
+//       }
+//     }
+//   }
+  
+  
+// }  
