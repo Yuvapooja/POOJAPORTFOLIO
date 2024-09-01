@@ -1,24 +1,24 @@
 
 
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import '../styles/Home.scss';
 
 const Home = () => {
   const [visibleSkills, setVisibleSkills] = useState([]);
 
-  const frontendSkills = [
+  const frontendSkills = useMemo(() => [
     { name: 'HTML', proficiency: 90 },
     { name: 'CSS', proficiency: 85 },
     { name: 'SCSS', proficiency: 80 },
     { name: 'JavaScript', proficiency: 75 },
     { name: 'React', proficiency: 70 }
-  ];
+  ], []);
 
-  const backendSkills = [
+  const backendSkills = useMemo(() => [
     { name: 'Node.js', proficiency: 65 },
     { name: 'MongoDB', proficiency: 60 }
-  ];
+  ], []);
 
   const displaySkills = useCallback(() => {
     setVisibleSkills([]);
