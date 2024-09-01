@@ -16,7 +16,7 @@ const Home = () => {
   ], []);
 
   const backendSkills = useMemo(() => [
-    { name: 'Node.js', proficiency: 65 },
+    { name: 'Node.js', proficiency: 25 },
     { name: 'MongoDB', proficiency: 60 }
   ], []);
 
@@ -126,28 +126,28 @@ const Home = () => {
       <h3>Responsive Restaurant Website</h3>
       <p><strong>Technologies:</strong> HTML, CSS</p>
       <p>Developed a responsive restaurant website ensuring a seamless user experience across devices.</p>
-      <a href="https://restaurant-website-link.com" target="_blank" rel="noopener noreferrer">View Project</a>
+      {/* <a href="https://restaurant-website-link.com" target="_blank" rel="noopener noreferrer">View Project</a> */}
     </div>
 
     <div className="project">
       <h3>Responsive Portfolio Website</h3>
       <p><strong>Technologies:</strong> HTML, SCSS, React.js</p>
       <p>Developed a fully responsive portfolio website to showcase my skills, projects, and contact information. The site features a modern design with video backgrounds, interactive skill bars, and smooth animations, providing an engaging and user-friendly experience.</p>
-      <a href="https://portfolio-website-link.com" target="_blank" rel="noopener noreferrer">View Project</a>
+      {/* <a href="https://portfolio-website-link.com" target="_blank" rel="noopener noreferrer">View Project</a> */}
     </div>
 
     <div className="project">
       <h3>Automated Form Filling System for Fertilizer Inspectors</h3>
       <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js, MongoDB</p>
       <p>Developed a website for automated form filling to reduce repetitive data entry and minimize errors associated with manual data input.</p>
-      <a href="https://form-filling-system-link.com" target="_blank" rel="noopener noreferrer">View Project</a>
+      {/* <a href="https://form-filling-system-link.com" target="_blank" rel="noopener noreferrer">View Project</a> */}
     </div>
 
     <div className="project">
       <h3>Snake Game</h3>
       <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
       <p>Created a classic Snake Game using HTML, CSS, and JavaScript. Features include scoring, random food placement, keyboard-controlled movement, collision detection, and a pause option.</p>
-      <a href="https://snake-game-link.com" target="_blank" rel="noopener noreferrer">View Project</a>
+      {/* <a href="https://snake-game-link.com" target="_blank" rel="noopener noreferrer">View Project</a> */}
     </div>
 
         </div>
